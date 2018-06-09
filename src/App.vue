@@ -1,14 +1,6 @@
 <template>
   <div id="app">
-    <PageLayout>
-      <template slot="header">
-        <h1>header</h1>
-      </template>
-      <template slot="navigate">
-        <SideMenu></SideMenu>
-      </template>
-      <router-view/>
-    </PageLayout>
+    <router-view/>
   </div>
 </template>
 

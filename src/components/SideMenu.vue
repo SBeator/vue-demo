@@ -7,7 +7,7 @@
         账号管理
       </template>
       <MenuItem name="/accounts/users">用户管理</MenuItem>
-      <MenuItem name="/accounts/texies">出租车管理</MenuItem>
+      <MenuItem name="/accounts/taxies">出租车管理</MenuItem>
       <MenuItem name="/accounts/companies">订车公司管理</MenuItem>
     </Submenu>
     <Submenu name="/accounts">
