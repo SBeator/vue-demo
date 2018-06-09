@@ -1,6 +1,6 @@
 const state = {
   username: '',
-  login: false
+  isLoggedin: false
 }
 
 const getters = {}
@@ -20,7 +20,7 @@ const actions = {
     const responseData = await response.json()
     if (responseData.success) {
       commit('setLoginUser', {
-        username: responseData.data.username
+        ...responseData.data
       })
     }
 
@@ -29,11 +29,24 @@ const actions = {
 }
 
 const mutations = {
+  init(state) {
+    const token = localStorage.getItem('token')
+    const username = localStorage.getItem('username')
+    if (token && username) {
+      state.isLoggedin = true
+      state.username = username
+    }
+  },
+
   setLoginUser(state, {
-    username
+    username,
+    token
   }) {
+    localStorage.setItem('token', token)
+    localStorage.setItem('username', username)
+
     state.username = username
-    state.login = true
+    state.isLoggedin = true
   }
 }
 

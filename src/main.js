@@ -11,6 +11,8 @@ Vue.config.productionTip = false
 
 Vue.use(iView)
 
+store.commit('login/init')
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
