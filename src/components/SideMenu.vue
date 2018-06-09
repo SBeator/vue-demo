@@ -38,8 +38,8 @@ export default {
     }
   },
   methods: {
-    onSelectMenu(e) {
-      console.log(e)
+    onSelectMenu(path) {
+      this.$router.push(path)
     }
   }
 }

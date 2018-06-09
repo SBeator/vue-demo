@@ -30,12 +30,12 @@ export default new Router({
     {
       path: 'accounts/users',
       name: 'User management',
-      component: HelloWorld
+      component: Login
     },
     {
       path: 'accounts/taxies',
       name: 'Taxi management',
-      component: HelloWorld
+      component: NotFound
     }]
   }, {
     path: '/login',
