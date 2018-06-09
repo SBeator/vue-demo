@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Layout>
+    <PageLayout>
       <template slot="header">
         <h1>header</h1>
       </template>
@@ -8,29 +8,20 @@
         <SideMenu></SideMenu>
       </template>
       <router-view/>
-    </Layout>
+    </PageLayout>
   </div>
 </template>
 
 <script>
-import Layout from './components/Layout'
+import PageLayout from './components/PageLayout'
 import SideMenu from './components/SideMenu'
+import Header from './components/Header'
 export default {
   name: 'App',
   components: {
-    Layout,
-    SideMenu
+    PageLayout,
+    SideMenu,
+    Header
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

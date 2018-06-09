@@ -25,7 +25,11 @@ module.exports = {
     'generator-star-spacing': 'off',
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'space-before-function-paren': 0,
+    "space-before-function-paren": ["error", {
+      "anonymous": "always",
+      "named": "never",
+      "asyncArrow": "always"
+    }],
     'vue/no-parsing-error': [2, {
       'abrupt-closing-of-empty-comment': true,
       'absence-of-digits-in-numeric-character-reference': true,
