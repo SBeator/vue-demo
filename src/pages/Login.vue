@@ -26,7 +26,9 @@ export default {
       })
 
       if (response.success) {
-        this.$router.push('/')
+        this.$router.push({
+          name: 'Home page'
+        })
       } else {
         console.log('failed')
         this.message = response.msg
