@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store'
 import iView from 'iview'
 import './theme/index.less'
 
@@ -14,6 +15,9 @@ Vue.use(iView)
 new Vue({
   el: '#app',
   router,
-  components: { App },
+  store,
+  components: {
+    App
+  },
   template: '<App/>'
 })
