@@ -1,7 +1,7 @@
 <template>
   <PageLayout>
     <template slot="header">
-      <h1>header</h1>
+      <Header></Header>
     </template>
     <template slot="navigate">
       <SideMenu></SideMenu>
@@ -22,3 +22,4 @@ export default {
   }
 }
 </script>
+

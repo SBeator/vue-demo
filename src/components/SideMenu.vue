@@ -3,7 +3,6 @@
     <MenuItem name="/">首页</MenuItem>
     <Submenu name="/accounts">
       <template slot="title">
-        <Icon type="ios-paper"></Icon>
         账号管理
       </template>
       <MenuItem name="/accounts/users">用户管理</MenuItem>
@@ -12,7 +11,6 @@
     </Submenu>
     <Submenu name="/accounts">
       <template slot="title">
-        <Icon type="ios-paper"></Icon>
         账号管理
       </template>
       <MenuItem name="/accounts/users">用户管理</MenuItem>
@@ -21,7 +19,6 @@
     </Submenu>
     <Submenu name="/accounts">
       <template slot="title">
-        <Icon type="ios-paper"></Icon>
         账号管理
       </template>
       <MenuItem name="/accounts/users">用户管理</MenuItem>
