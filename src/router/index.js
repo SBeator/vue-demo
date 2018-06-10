@@ -36,6 +36,11 @@ export default new Router({
       path: 'accounts/taxies',
       name: 'Taxi management',
       component: NotFound
+    },
+    {
+      path: 'accounts/companies',
+      name: 'Companies management',
+      component: HelloWorld
     }]
   }, {
     path: '/login',

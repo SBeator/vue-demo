@@ -1,5 +1,5 @@
 <template>
-  <Menu active-name="1" width="auto" :theme="theme2" class="menu" @on-select="onSelectMenu">
+  <Menu :active-name="activePath" :open-names="openedMenus" width="auto" :theme="theme2" class="menu" @on-select="onSelectMenu">
     <MenuItem name="/">首页</MenuItem>
     <Submenu name="/accounts">
       <template slot="title">
@@ -9,21 +9,13 @@
       <MenuItem name="/accounts/taxies">出租车管理</MenuItem>
       <MenuItem name="/accounts/companies">订车公司管理</MenuItem>
     </Submenu>
-    <Submenu name="/accounts">
+    <Submenu name="/tools">
       <template slot="title">
-        账号管理
+        监督工具
       </template>
-      <MenuItem name="/accounts/users">用户管理</MenuItem>
-      <MenuItem name="/accounts/taxies">出租车管理</MenuItem>
-      <MenuItem name="/accounts/companies">订车公司管理</MenuItem>
-    </Submenu>
-    <Submenu name="/accounts">
-      <template slot="title">
-        账号管理
-      </template>
-      <MenuItem name="/accounts/users">用户管理</MenuItem>
-      <MenuItem name="/accounts/taxies">出租车管理</MenuItem>
-      <MenuItem name="/accounts/companies">订车公司管理</MenuItem>
+      <MenuItem name="/tools/users">什么什么</MenuItem>
+      <MenuItem name="/tools/taxies">下一个工具</MenuItem>
+      <MenuItem name="/tools/companies">地图</MenuItem>
     </Submenu>
   </Menu>
 </template>
@@ -32,6 +24,19 @@ export default {
   data() {
     return {
       theme2: 'light'
+    }
+  },
+  computed: {
+    activePath() {
+      return this.$router.currentRoute.path
+    },
+
+    openedMenus() {
+      return [
+        this.activePath.replace(/(.+)\/.*/, (match, $1) => {
+          return $1
+        })
+      ]
     }
   },
   methods: {
