@@ -1,13 +1,13 @@
 <template>
   <Menu :active-name="activePath" :open-names="openedMenus" width="auto" :theme="theme2" class="menu" @on-select="onSelectMenu">
-    <MenuItem name="/">首页</MenuItem>
+    <MenuItem name="/">{{$t("navigation.homepage")}}</MenuItem>
     <Submenu name="/accounts">
       <template slot="title">
-        账号管理
+        {{$t("navigation.accountManagement")}}
       </template>
-      <MenuItem name="/accounts/users">用户管理</MenuItem>
-      <MenuItem name="/accounts/taxies">出租车管理</MenuItem>
-      <MenuItem name="/accounts/companies">订车公司管理</MenuItem>
+      <MenuItem name="/accounts/users">{{$t("navigation.userManagement")}}</MenuItem>
+      <MenuItem name="/accounts/taxies">{{$t("navigation.taxiManagement")}}</MenuItem>
+      <MenuItem name="/accounts/companies">{{$t("navigation.companyManagement")}}</MenuItem>
     </Submenu>
     <Submenu name="/tools">
       <template slot="title">

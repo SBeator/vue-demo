@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <h1>后台管理系统</h1>
+    <h1>{{$t('header.title')}}</h1>
     <div class="profile">
       <Avatar icon="person" />
     </div>
