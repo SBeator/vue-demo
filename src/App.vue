@@ -2,8 +2,8 @@
   <div id="app">
     <div>
       <Icon type="test" :size="20"></Icon>
-      <Icon type="test" :size="16"></Icon>
-      <Icon type="test"></Icon>
+      <Icon type="test" :size="16" color="red"></Icon>
+      <Icon type="test" class="aaa"></Icon>
       <Icon type="test" :size="160"></Icon>
     </div>
     <router-view/>
@@ -15,21 +15,13 @@ import PageLayout from './components/PageLayout'
 import SideMenu from './components/SideMenu'
 import Header from './components/Header'
 
-import svg from './icons/svgs/meh.svg'
+// import * as svg from './icons/svgs'
 export default {
   name: 'App',
   components: {
     PageLayout,
     SideMenu,
     Header
-  },
-  data() {
-    return {
-      svg: svg
-    }
-  },
-  mounted() {
-    console.log(this.svg)
   }
 }
 </script>
