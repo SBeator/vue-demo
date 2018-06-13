@@ -7,12 +7,14 @@ import store from './store'
 import iView from 'iview'
 
 import './theme/index.less'
+import Icons from './icons'
 
 import i18n from './i18n'
 
-Vue.config.productionTip = false
-
 Vue.use(iView)
+Vue.use(Icons)
+
+Vue.config.productionTip = false
 
 store.commit('login/init')
 
