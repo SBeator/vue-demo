@@ -4,7 +4,8 @@
       <Icon type="test" :size="20"></Icon>
       <Icon type="test" :size="16" color="red"></Icon>
       <Icon type="test" class="aaa"></Icon>
-      <Icon type="test" :size="160"></Icon>
+      <Icon type="test"></Icon>
+      <Icon type="ionic"></Icon>
     </div>
     <router-view/>
   </div>

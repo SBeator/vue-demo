@@ -2,14 +2,19 @@ import Icon from 'vue-awesome/components/Icon'
 
 import CustomizedIcon from './CustomizedIcon'
 
-import svg from './svgs/meh.svg'
+const icons = [
+  'meh'
+]
 
-Icon.register({
-  test: {
-    width: 40,
-    height: 40,
-    raw: atob(svg.replace('data:image/svg+xml;base64,', ''))
-  }
+icons.forEach(iconName => {
+  const svg = require(`./svgs/${iconName}.svg`)
+  Icon.register({
+    test: {
+      width: 40,
+      height: 40,
+      raw: atob(svg.replace('data:image/svg+xml;base64,', ''))
+    }
+  })
 })
 
 export default (Vue) => {
