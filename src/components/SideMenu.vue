@@ -5,8 +5,12 @@
       <template slot="title">
         {{$t("navigation.accountManagement")}}
       </template>
-      <MenuItem name="/accounts/users">{{$t("navigation.userManagement")}}</MenuItem>
-      <MenuItem name="/accounts/taxies">{{$t("navigation.taxiManagement")}}</MenuItem>
+      <MenuItem name="/accounts/users">
+      <Icon type="test"></Icon>{{$t("navigation.userManagement")}}
+      </MenuItem>
+      <MenuItem name="/accounts/taxies">
+      <Icon type="ionic"></Icon>{{$t("navigation.taxiManagement")}}
+      </MenuItem>
       <MenuItem name="/accounts/companies">{{$t("navigation.companyManagement")}}</MenuItem>
     </Submenu>
     <Submenu name="/tools">
