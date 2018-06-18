@@ -20,7 +20,7 @@ export default {
   },
   computed: {
     isCustomized() {
-      return this.type in customizedIconsList
+      return customizedIconsList.indexOf(this.type) >= 0
     }
   }
 }
