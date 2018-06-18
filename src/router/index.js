@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import store from '@/store'
 
 import HelloWorld from '@/components/HelloWorld'
+import IconTest from '@/components/IconTest'
 import MainPage from '@/pages/MainPage'
 import Login from '@/pages/Login'
 import NotFound from '@/pages/NotFound'
@@ -25,7 +26,7 @@ export default new Router({
     children: [{
       path: '/',
       name: 'Home page',
-      component: HelloWorld
+      component: IconTest
     },
     {
       path: 'accounts/users',

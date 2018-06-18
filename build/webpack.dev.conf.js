@@ -7,6 +7,7 @@ const path = require('path')
 const baseWebpackConfig = require('./webpack.base.conf')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const WebfontPlugin = require('webfont-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 
@@ -64,7 +65,17 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         to: config.dev.assetsSubDirectory,
         ignore: ['.*']
       }
-    ])
+    ]),
+    new WebfontPlugin.default({
+      files: path.resolve(__dirname, "../src/icons/svgs/*.svg"),
+      dest: path.resolve(__dirname, "../src/icons/fonts"),
+      template: 'css'
+    }),
+    new WebfontPlugin.default({
+      files: path.resolve(__dirname, "../src/icons/svgs/*.svg"),
+      dest: path.resolve(__dirname, "../src/icons/fonts"),
+      template: 'html'
+    })
   ]
 })
 

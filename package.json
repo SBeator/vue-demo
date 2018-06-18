@@ -15,7 +15,6 @@
   "dependencies": {
     "iview": "^2.14.2",
     "vue": "^2.5.2",
-    "vue-awesome": "^2.3.7",
     "vue-i18n": "^7.8.0",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
@@ -70,6 +69,7 @@
     "vue-loader": "^13.3.0",
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.2",
+    "webfont-webpack-plugin": "^0.2.2",
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.9.1",

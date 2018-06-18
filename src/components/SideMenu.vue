@@ -6,12 +6,14 @@
         {{$t("navigation.accountManagement")}}
       </template>
       <MenuItem name="/accounts/users">
-      <Icon type="test"></Icon>{{$t("navigation.userManagement")}}
+      <Icon type="new-draw"></Icon>{{$t("navigation.userManagement")}}
       </MenuItem>
       <MenuItem name="/accounts/taxies">
       <Icon type="ionic"></Icon>{{$t("navigation.taxiManagement")}}
       </MenuItem>
-      <MenuItem name="/accounts/companies">{{$t("navigation.companyManagement")}}</MenuItem>
+      <MenuItem name="/accounts/companies">
+      <Icon type="arrow-right-a"></Icon>
+      {{$t("navigation.companyManagement")}}</MenuItem>
     </Submenu>
     <Submenu name="/tools">
       <template slot="title">
