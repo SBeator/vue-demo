@@ -6,6 +6,8 @@
 import WebfontIcon from './WebfontIcon.vue'
 import { Icon as IViewIcon } from 'iview'
 
+import customizedIconsList from './customizedIconsList'
+
 export default {
   props: {
     type: String,
@@ -18,7 +20,7 @@ export default {
   },
   computed: {
     isCustomized() {
-      return this.type === 'new-draw'
+      return this.type in customizedIconsList
     }
   }
 }

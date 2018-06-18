@@ -75,6 +75,12 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       files: path.resolve(__dirname, "../src/icons/svgs/*.svg"),
       dest: path.resolve(__dirname, "../src/icons/fonts"),
       template: 'html'
+    }),
+    new WebfontPlugin.default({
+      files: path.resolve(__dirname, "../src/icons/svgs/*.svg"),
+      dest: path.resolve(__dirname, "../src/icons/fonts"),
+      template: path.resolve(__dirname, "../src/icons/templates/iconsList.js"),
+      destTemplate: path.resolve(__dirname, "../src/icons"),
     })
   ]
 })
