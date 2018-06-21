@@ -1,0 +1,14 @@
+{
+  "mainAreaCode": "CNSCA1",
+  "areas": [{
+      "centerLat": 31.072726,
+      "rightLng": 104.015574,
+      "size": 0.008938
+    },
+    {
+      "centerLat": 31.072726,
+      "rightLng": 104.015574,
+      "size": 0.008938
+    }
+  ]
+}

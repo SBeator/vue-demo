@@ -1,0 +1,21 @@
+[{
+    "id": 0,
+    "code": "CNSCA1_98,109",
+    "areaCode": "CNSCA1",
+    "uponLat": 31.072726,
+    "underLat": 31.063788,
+    "rightLng": 104.015574,
+    "leftLng": 104.005244,
+    "mainAreaCode": "CNSCA1"
+  },
+  {
+    "id": 0,
+    "code": "CNSCA1_98,108",
+    "areaCode": "CNSCA1",
+    "uponLat": 31.063788,
+    "underLat": 31.05485,
+    "rightLng": 104.015574,
+    "leftLng": 104.005244,
+    "mainAreaCode": "CNSCA1"
+  }
+]
