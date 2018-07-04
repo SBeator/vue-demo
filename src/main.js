@@ -5,13 +5,14 @@ import App from './App'
 import router from './router'
 import store from './store'
 import iView from 'iview'
+import locale from 'iview/dist/locale/en-US'
 
 import './theme/index.less'
 import Icons from './icons'
 
 import i18n from './i18n'
 
-Vue.use(iView)
+Vue.use(iView, {locale})
 Vue.use(Icons)
 
 Vue.config.productionTip = false
