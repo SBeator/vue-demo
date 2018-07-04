@@ -9,6 +9,7 @@ import Map from '@/components/Map'
 import MainPage from '@/pages/MainPage'
 import Login from '@/pages/Login'
 import NotFound from '@/pages/NotFound'
+import UserManagement from '@/pages/UserManagement.vue'
 
 Vue.use(Router)
 
@@ -32,7 +33,7 @@ export default new Router({
     {
       path: 'accounts/users',
       name: 'User management',
-      component: Login
+      component: UserManagement
     },
     {
       path: 'accounts/taxies',
