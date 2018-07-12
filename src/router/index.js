@@ -14,7 +14,7 @@ import UserManagement from '@/pages/UserManagement.vue'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  mode: 'hash',
   routes: [{
     path: '/',
     component: MainPage,
