@@ -10,37 +10,90 @@ import AMap from 'AMap'
 export default {
   data() {
     return {
-      map: null
+      map: null,
+      shouldShowGridAreas: false,
+      gridAreasOverlayGroup: null,
+      areaRectsMap: []
     }
   },
   mounted() {
     this.map = new AMap.Map('mapContainer', {
       resizeEnable: true,
-      zoom: 12
+      zoom: 13
     })
+
+    this.map.on('moveend', this.redrawOverlay)
+    this.map.on('zoomend', this.redrawOverlay)
   },
   methods: {
     async showChengdu() {
       const result = await this.$store.dispatch('map/loadGridArea')
       if (result.success) {
-        const rects = this.$store.state.map.gridArea.map(area => {
-          return new AMap.Rectangle({
-            bounds: new AMap.Bounds(
-              [area.leftLng, area.underLat],
-              [area.rightLng, area.uponLat]
+        this.shouldShowGridAreas = true
+        this.showGridAreas()
+      }
+    },
+
+    redrawOverlay() {
+      if (this.shouldShowGridAreas) {
+        this.showGridAreas()
+      }
+    },
+
+    showGridAreas() {
+      if (this.gridAreasOverlayGroup) {
+        this.map.remove(this.gridAreasOverlayGroup)
+        this.gridAreasOverlayGroup = null
+      }
+
+      if (this.map.getZoom() >= 11) {
+        const mapBound = this.map.getBounds()
+
+        const areaRectsMap = []
+
+        this.areaRectsMap.forEach(rectMap => {
+          if (mapBound.contains(rectMap.rect.getBounds().getCenter())) {
+            areaRectsMap.push(rectMap)
+          } else {
+            this.map.remove(rectMap.rect)
+          }
+        })
+
+        const newAreaRects = this.$store.state.map.gridArea
+          .filter(area => {
+            return (
+              (!areaRectsMap.length ||
+                !areaRectsMap.filter(rectMap => rectMap.code === area.code)
+                  .length) &&
+              (mapBound.contains([area.leftLng, area.underLat]) ||
+                mapBound.contains([area.rightLng, area.underLat]) ||
+                mapBound.contains([area.leftLng, area.uponLat]) ||
+                mapBound.contains([area.rightLng, area.uponLat]))
             )
           })
+          .map(area => {
+            return {
+              code: area.code,
+              rect: new AMap.Rectangle({
+                bounds: new AMap.Bounds(
+                  [area.leftLng, area.underLat],
+                  [area.rightLng, area.uponLat]
+                ),
+                strokeColor: '#3b3eac', // 线颜色
+                strokeOpacity: 0.3, // 线透明度
+                strokeWeight: 1, // 线宽
+                fillColor: '#3366cc', // 填充色
+                fillOpacity: 0.4 // 填充透明度
+              })
+            }
+          })
+
+        this.areaRectsMap = [...areaRectsMap, ...newAreaRects]
+
+        this.areaRectsMap.forEach(rectMap => {
+          this.map.add(rectMap.rect)
         })
-
-        var overlayGroup = new AMap.OverlayGroup(rects)
-
-        this.$nextTick(() => {
-          this.map.add(overlayGroup)
-        })
-
-        const firstArea = this.$store.state.map.gridArea[0]
-
-        this.map.setCenter([firstArea.leftLng, firstArea.underLat])
+      } else {
       }
     }
   }
