@@ -3,7 +3,7 @@
     <label for="username">Username</label>
     <input type="text" id="username" v-model="username">
     <label for="password">Password</label>
-    <input type="text" id="password" v-model="password">
+    <input type="password" id="password" v-model="password">
     <button type="submit">Submit</button>
     <p>{{message}}</p>
   </form>
@@ -26,9 +26,7 @@ export default {
       })
 
       if (response.success) {
-        this.$router.push({
-          name: 'Home page'
-        })
+        this.$router.push('/')
       } else {
         console.log('failed')
         this.message = response.msg

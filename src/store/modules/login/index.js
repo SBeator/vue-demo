@@ -1,3 +1,5 @@
+import { post, END_POINTS } from '@/api'
+
 const state = {
   username: '',
   isLoggedin: false
@@ -10,14 +12,7 @@ const actions = {
     commit,
     state
   }, postData) {
-    const response = await fetch('https://dev.paircity.com/v1/admin/auth/name', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(postData)
-    })
-    const responseData = await response.json()
+    const responseData = await post(END_POINTS.LOGIN, postData)
     if (responseData.success) {
       commit('setLoginUser', {
         ...responseData.data
