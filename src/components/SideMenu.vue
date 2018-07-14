@@ -5,24 +5,25 @@
       <template slot="title">
         {{$t("navigation.accountManagement")}}
       </template>
-      <MenuItem name="/accounts/users">
-      <Icon type="new-draw"></Icon>{{$t("navigation.userManagement")}}
+      <MenuItem name="/accounts/users"> {{$t("navigation.userManagement")}}
       </MenuItem>
-      <MenuItem name="/accounts/taxies">
-      <Icon type="ionic"></Icon>{{$t("navigation.taxiManagement")}}
+      <MenuItem name="/accounts/taxies"> {{$t("navigation.taxiManagement")}}
       </MenuItem>
-      <MenuItem name="/accounts/companies">
-      <Icon type="arrow-right-a"></Icon>
-      {{$t("navigation.companyManagement")}}</MenuItem>
+      <MenuItem name="/accounts/companies"> {{$t("navigation.companyManagement")}}
+      </MenuItem>
     </Submenu>
-    <Submenu name="/tools">
+    <Submenu name="/transHubEstMgmt">
       <template slot="title">
-        监督工具
+        交通枢纽
       </template>
-      <MenuItem name="/tools/users">什么什么</MenuItem>
-      <MenuItem name="/tools/taxies">下一个工具</MenuItem>
-      <MenuItem name="/tools/companies">地图</MenuItem>
+      <MenuItem name="/transHubEstMgmt/transHubEstChartPage">运力保障</MenuItem>
+      <MenuItem name="/transHubStatMgmt/transHubStatPage">关键数据</MenuItem>
+      <MenuItem name="/transHubTrailMgmt/transHubTrailListPage">轨迹监控</MenuItem>
+      <MenuItem name="/transHubAreaMgmt/transHubAreaPage">划定区域</MenuItem>
+      <MenuItem name="/shortCutEstMgmt/shortCutListPage">短途行程</MenuItem>
+      <MenuItem name="/transHubTripMgmt/transHubTripListPage">排队秩序</MenuItem>
     </Submenu>
+    </MenuItem>
   </Menu>
 </template>
 <script>
