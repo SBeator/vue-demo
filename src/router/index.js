@@ -3,13 +3,10 @@ import Router from 'vue-router'
 
 import store from '@/store'
 
-import HelloWorld from '@/components/HelloWorld'
-import IconTest from '@/components/IconTest'
-import Map from '@/components/Map'
 import MainPage from '@/pages/MainPage'
 import Login from '@/pages/Login'
 import NotFound from '@/pages/NotFound'
-import UserManagement from '@/pages/UserManagement.vue'
+import PlaceholderPage from '@/pages/PlaceholderPage.vue'
 
 Vue.use(Router)
 
@@ -27,27 +24,57 @@ export default new Router({
     },
     children: [{
       path: '/',
-      name: 'Home page',
-      component: IconTest
+      name: '首页',
+      component: PlaceholderPage
     },
     {
       path: 'accounts/users',
-      name: 'User management',
-      component: UserManagement
+      name: '用户管理',
+      component: PlaceholderPage
     },
     {
       path: 'accounts/taxies',
-      name: 'Taxi management',
-      component: HelloWorld
+      name: '出租车管理',
+      component: PlaceholderPage
     },
     {
       path: 'accounts/companies',
-      name: 'Companies management',
-      component: Map
+      name: '订车公司管理',
+      component: PlaceholderPage
+    },
+    {
+      path: '/transHubEstMgmt/transHubEstChartPage',
+      name: '运力保障',
+      component: PlaceholderPage
+    },
+    {
+      path: '/transHubStatMgmt/transHubStatPage',
+      name: '关键数据',
+      component: PlaceholderPage
+    },
+    {
+      path: '/transHubTrailMgmt/transHubTrailListPage',
+      name: '轨迹监控',
+      component: PlaceholderPage
+    },
+    {
+      path: '/transHubAreaMgmt/transHubAreaPage',
+      name: '划定区域',
+      component: PlaceholderPage
+    },
+    {
+      path: '/shortCutEstMgmt/shortCutListPage',
+      name: '短途行程',
+      component: PlaceholderPage
+    },
+    {
+      path: '/transHubTripMgmt/transHubTripListPage',
+      name: '排队秩序',
+      component: PlaceholderPage
     }]
   }, {
     path: '/login',
-    name: 'Login',
+    name: '登录',
     component: Login
   }, {
     path: '*',
