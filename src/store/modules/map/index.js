@@ -9,13 +9,6 @@ const actions = {
     commit,
     state
   }, postData) {
-    // const response = await fetch('https://dev.paircity.com/v1/admin/api/admin/gridArea/getGridByArea?areaCode=CNSCA1', {
-    //   headers: {
-    //     'x-me-token': localStorage.getItem('token')
-    //   }
-    // })
-    // const responseData = await response.json()
-
     const responseData = require('../../../../static/fullAreaResponse.json')
     if (responseData.code === 2001) {
       commit('setGridArea', {

@@ -3,10 +3,10 @@ import Router from 'vue-router'
 
 import store from '@/store'
 
-import MainPage from '@/pages/MainPage'
-import Login from '@/pages/Login'
-import NotFound from '@/pages/NotFound'
-import PlaceholderPage from '@/pages/PlaceholderPage.vue'
+const MainPage = () => import('@/pages/MainPage')
+const Login = () => import('@/pages/Login')
+const PlaceholderPage = () => import('@/pages/PlaceholderPage.vue')
+const NotFound = () => import('@/pages/NotFound')
 
 Vue.use(Router)
 
