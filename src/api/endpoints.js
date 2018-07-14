@@ -1,3 +1,3 @@
 export default {
-  LOGIN: 'admin/auth/name'
+  LOGIN: 'auth/name'
 }

@@ -1,9 +1,6 @@
 import axios from 'axios'
-import config from '../config'
 
-const {
-  baseUrl
-} = config
+const baseUrl = process.env.BASE_URL
 
 export async function send(url, {
   method = 'GET',

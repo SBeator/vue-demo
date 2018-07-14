@@ -3,6 +3,5 @@ const merge = require('webpack-merge')
 const prodEnv = require('./prod.env')
 
 module.exports = merge(prodEnv, {
-  NODE_ENV: '"development"',
-  BASE_URL: '"https://dev.paircity.com/v1/admin/"'
+  BASE_URL: '"https://uat.paircity.com/v1/admin/"'
 })

@@ -6,14 +6,18 @@
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "start": "npm run dev",
+    "dev:local": "cross-env CONFIG_ENV=local npm run dev",
+    "start": "cross-env CONFIG_ENV=dev npm run dev",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit",
-    "build": "node build/build.js"
+    "build:prod": "cross-env CONFIG_ENV=prod node build/build.js",
+    "build:dev": "cross-env CONFIG_ENV=dev node build/build.js",
+    "build:uat": "cross-env CONFIG_ENV=uat node build/build.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "cross-env": "^5.2.0",
     "iview": "^2.14.2",
     "vue": "^2.5.2",
     "vue-i18n": "6.1.3",

@@ -4,5 +4,5 @@ const prodEnv = require('./prod.env')
 
 module.exports = merge(prodEnv, {
   NODE_ENV: '"development"',
-  BASE_URL: '"https://dev.paircity.com/v1/admin/"'
+  BASE_URL: '"http://localhost:8085/"'
 })
