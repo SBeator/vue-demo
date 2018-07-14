@@ -1,3 +1,4 @@
+import axios from 'axios'
 import config from '../config'
 
 const {
@@ -6,38 +7,37 @@ const {
 
 export async function send(url, {
   method = 'GET',
-  body = {},
+  data = {},
   headers = {}
 }) {
   let responseData
   try {
-    const response = await fetch(`${baseUrl}${url}`, {
+    const response = await axios({
+      url: `${baseUrl}${url}`,
       method: method,
       headers: {
-        'Content-Type': 'application/json',
         'me-client-type': 'me-client/web',
         ...headers
       },
-      body
+      data
     })
-    responseData = await response.json()
+    responseData = response.data
   } catch (e) {
-    console.log(e)
-    responseData = {
+    responseData = (e.response && e.response.data) || {
       success: false,
-      code: e,
-      msg: e
+      msg: '失败'
     }
   }
 
   return responseData
 }
 
-export async function post(url, postData, token = '') {
+export async function post(url, data, token = '') {
   return send(url, {
     method: 'POST',
-    body: JSON.stringify(postData),
+    data,
     headers: {
+      'Content-Type': 'application/json',
       'x-me-token': token
     }
   })
